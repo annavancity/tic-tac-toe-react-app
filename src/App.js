@@ -39,6 +39,11 @@ function App() {
     [2, 4, 6],
     [0, 4, 8]
   ]
+
+  useEffect(() => {
+    checkWinner();
+  },[board])
+
   const checkWinner = () => {
     for(let i = 0; i < winnerOptions.length; i++){
       const [a, b, c] = winnerOptions[i]
@@ -56,9 +61,7 @@ function App() {
     return !arr.length;
   }
 
-  useEffect(() => {
-    checkWinner();
-  },[board])
+
 
   return (
     <div className='App'>
