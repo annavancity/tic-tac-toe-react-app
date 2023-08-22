@@ -40,9 +40,7 @@ function App() {
     [0, 4, 8]
   ]
 
-  useEffect(() => {
-    checkWinner();
-  },[board])
+
 
   const checkWinner = () => {
     for(let i = 0; i < winnerOptions.length; i++){
@@ -55,6 +53,10 @@ function App() {
       }
     }
   }
+
+  useEffect(() => {
+    checkWinner();
+  },[board])
 
   const isDraw = () => {
     const arr = board.filter(el => el === null || el === ' ');
